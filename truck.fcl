@@ -10,7 +10,7 @@
 									pcingola@users.sourceforge.net
 */
 
-FUNCTION_BLOCK truckParkz
+FUNCTION_BLOCK truckPark
 
 VAR_INPUT				// Define input variables
 	angle : REAL;
@@ -64,28 +64,28 @@ RULEBLOCK No1
 	RULE 6 : IF xposition IS left AND angle IS northEast THEN direction IS negativeBig;
 	RULE 7 : IF xposition IS left AND angle IS northWest THEN direction IS negativeBig;
 
-	RULE 8  : IF xposition IS leftCenter AND angle IS west THEN direction IS positiveMedium;
-	RULE 9  : IF xposition IS leftCenter AND angle IS southWest THEN direction IS positiveSmall;
+	RULE 8  : IF xposition IS leftCenter AND angle IS west THEN direction IS positiveBig;
+	RULE 9  : IF xposition IS leftCenter AND angle IS southWest THEN direction IS positiveMedium;
 	RULE 10 : IF xposition IS leftCenter AND angle IS south THEN direction IS positiveSmall;
 	RULE 11 : IF xposition IS leftCenter AND angle IS southEast THEN direction IS negativeSmall;
 	RULE 12 : IF xposition IS leftCenter AND angle IS east THEN direction IS negativeMedium;
 	RULE 13 : IF xposition IS leftCenter AND angle IS northEast THEN direction IS negativeBig;
-	RULE 14 : IF xposition IS leftCenter AND angle IS northWest THEN direction IS negativeBig;
+	RULE 14 : IF xposition IS leftCenter AND angle IS northWest THEN direction IS positiveBig;
 
 	RULE 15 : IF xposition IS center AND angle IS west THEN direction IS positiveBig;
 	RULE 16 : IF xposition IS center AND angle IS southWest THEN direction IS positiveMedium;
 	RULE 17 : IF xposition IS center AND angle IS south THEN direction IS zero;
 	RULE 18 : IF xposition IS center AND angle IS southEast THEN direction IS negativeMedium;
 	RULE 19 : IF xposition IS center AND angle IS east THEN direction IS negativeBig;
-	RULE 20 : IF xposition IS center AND angle IS northEast THEN direction IS positiveMedium;
-	RULE 21 : IF xposition IS center AND angle IS northWest THEN direction IS negativeMedium;
+	RULE 20 : IF xposition IS center AND angle IS northEast THEN direction IS negativeMedium;
+	RULE 21 : IF xposition IS center AND angle IS northWest THEN direction IS positiveMedium;
 
 	RULE 22 : IF xposition IS rightCenter AND angle IS west THEN direction IS positiveMedium;
 	RULE 23 : IF xposition IS rightCenter AND angle IS southWest THEN direction IS positiveSmall;
 	RULE 24 : IF xposition IS rightCenter AND angle IS south THEN direction IS negativeSmall;
-	RULE 25 : IF xposition IS rightCenter AND angle IS southEast THEN direction IS negativeSmall;
-	RULE 26 : IF xposition IS rightCenter AND angle IS east THEN direction IS negativeMedium;
-	RULE 27 : IF xposition IS rightCenter AND angle IS northEast THEN direction IS positiveBig;
+	RULE 25 : IF xposition IS rightCenter AND angle IS southEast THEN direction IS negativeMedium;
+	RULE 26 : IF xposition IS rightCenter AND angle IS east THEN direction IS negativeBig;
+	RULE 27 : IF xposition IS rightCenter AND angle IS northEast THEN direction IS negativeBig;
 	RULE 28 : IF xposition IS rightCenter AND angle IS northWest THEN direction IS positiveBig;
 
 	RULE 29 : IF xposition IS right AND angle IS west THEN direction IS zero;

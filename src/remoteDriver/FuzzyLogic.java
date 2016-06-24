@@ -1,6 +1,7 @@
 package remoteDriver;
 
 import net.sourceforge.jFuzzyLogic.FIS;
+import net.sourceforge.jFuzzyLogic.rule.Rule;
 
 public class FuzzyLogic {
 	private static String FILEPATH = "./truck.fcl";
@@ -23,6 +24,8 @@ public class FuzzyLogic {
 		this.fis.setVariable(XPOSITION_NAME, xposition);
 		this.fis.evaluate();
 		double directionValue = this.fis.getVariable(DIRECTION_NAME).getValue();
+		 for( Rule r : fis.getFunctionBlock("truckPark").getFuzzyRuleBlock("No1").getRules() )
+		      System.out.println(r);
 		return this.normalize(directionValue);
 	}
 
